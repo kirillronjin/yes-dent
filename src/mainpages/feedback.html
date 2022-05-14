@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+        <link rel="stylesheet" href="../../css/bvi.min.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bvi-font.min.css" type="text/css">    
+    <link rel="icon" href="../../images/logoInHeader.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Отзывы</title>
+    <meta name="description" content='Оставьте отзыв о нашей работе.'/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="../../maskinput.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+   jQuery(function($){
+   $("#phone").mask("+9 (999) 999-99-99");
+   });
+</script>
+
+<div class="modal fade" id="give-feedback" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="padding-right: 0px !important;">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" style="">
+        <div class="modal-content">
+            <div class="text-end" style="padding-top: 3px; padding-right: 3px;">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding-top: 0 !important;">
+                <div class="give-feedback" id="">
+                    <div class="give-feedback-content">
+                        <h2 class="text-center" id="head-feedback">Оставьте отзыв о нашей работе</h2>
+                        <div class="fio row text-center">
+                            <div class="col-md-4">
+                                <input type="text" name="fsurname" id="fsurname" placeholder="Фамилия">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="fname" id="fname" placeholder="Имя">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="fdadname" id="fdadname" placeholder="Отчество">
+                            </div>
+                        </div>
+                        <div class="feedback-text">
+                            <textarea placeholder="Отзыв" id="feedback"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button id="feedback-send" onclick="sendFeedback()">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function sendFeedback() {
+    var button = document.getElementById("feedback-send");
+    var head = document.getElementById("head-feedback");
+    var fname = document.getElementById("fname");
+    var fsurname = document.getElementById("fsurname");
+    var fdadname = document.getElementById("fdadname");
+    var feedback = document.getElementById("feedback");
+    if (feedback.value!="" && name.value!="") {
+        head.innerHTML = "Отзыв отправляется...";
+        fname.classList.add('d-none');
+        fsurname.classList.add('d-none');
+        fdadname.classList.add('d-none');
+        feedback.classList.add('d-none');
+        button.classList.add("d-none");
+        $.ajax({
+            method: "POST",
+            url: "feedback.php",
+            data: {
+                'fname' : fname.value,
+                'fsurname' : fsurname.value,
+                'fdadname' : fdadname.value,
+                'feedback' : feedback.value,
+            }
+        }).done(function() {
+            head.innerHTML = "Спасибо за Ваш отзыв!";
+            fname.value = "";
+            fsurname.value = "";
+            fdadname.value = "";
+            feedback.value = "";
+            setTimeout(() => {
+                head.innerHTML = "Оставьте отзыв о нашей работе";
+                fname.classList.remove('d-none');
+                fsurname.classList.remove('d-none');
+                fdadname.classList.remove('d-none');
+                feedback.classList.remove('d-none');
+                button.classList.remove('d-none');
+                }, 2000);
+            });
+            fname.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+            feedback.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+        }
+    else {
+        fname.style.border = "1px red solid";
+        feedback.style.border = "1px red solid";
+        }
+    return false;
+    }
+
+</script>
+
+<div class="header container d-none d-lg-block">
+    <div class="header-content row">
+        <div class="col-4 text-center second-text-header">
+            Стоматология в Ярославле
+        </div>
+        <div class="col-4 header-name text-center">
+            <a href="../../index.html"><img src="../../images/logoHeader.png" height="50" style="margin-top: -10px;"></a>
+            YesDent
+        </div>
+        <div class="col-4 text-center second-text-header">
+            ул. Елены Колесовой, 58
+        </div>
+    </div>
+</div>
+
+<div class="navigation sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid container">
+            <div class="logo navbar-brand d-lg-none">
+                <a href="../../index.html"><img src="../../images/logoInHeader.png" style="margin-top: -10px;" height="60"/></a>
+                <span class="logo navbar-brand d-none d-sm-inline" href="#">YesDent</span>
+                <span class="logo-sm navbar-brand d-sm-none" href="#">YesDent</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="link-nav nav-link" href="../../index.html">Главная</a>
+                    <a class="link-nav nav-link" href="services.html">Услуги</a>
+                    <a class="link-nav nav-link" href="doctors.html">Врачи</a>
+                    <a class="link-nav nav-link active" aria-current="page" href="feedback.html">Отзывы</a>
+                    <a class="link-nav nav-link" href="contacts.html">Контакты</a>
+                    <a class="link-nav nav-link" href="works.html">Работы</a>
+                    <!--<a class="link-nav nav-link active" aria-current="page" href="#">Кейсы</a>-->
+                    <a class="link-nav nav-link" href="tel:74852569090">
+                        <img src="../../images/phone.png" style="margin-top: -2px;"  height="20px"/>
+                        8 (4852) 56-90-90
+                    </a>
+                    <a class="link-nav nav-link" href="tel:79056337486">
+                        <img src="../../images/phone.png" style="margin-top: -2px;"  height="20px"/>
+                        8 (905) 633-74-86
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container text-center" style="margin-top: 10px;">
+    <button class="visually-impaired" style="background: white !important;">
+    <a href="#" class="bvi-open" title="Версия сайта для слабовидящих" style="color: black !important;"><i class="bvi-icon bvi-eye bvi-2x"></i> Версия сайта для слабовидящих</a>
+    </button>
+</div>
+
+<section class="container feedback-list" style="margin-top: 20px;">
+    <h1 class="text-center">Оставьте отзыв о нас</h1>
+    <div class="row">
+        <div class="col-6 col-md-3 text-center">
+            <a href="https://www.google.com/search?q=yes+dent&oq=yes+dent&aqs=chrome..69i57j35i39j0i512j46i175i199i512j0i512j69i60l3.1660j0j7&sourceid=chrome&ie=UTF-8#lrd=0x46b28e1e384594ff:0x9d69d2713eb0ab07,1,,,">
+                <img src="../../images/google.png" style="max-height:50px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+            <a href="https://yandex.ru/search/?clid=9582&text=yes+dent&l10n=ru&lr=16">
+                <img src="../../images/yandex.png" style="max-height:50px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+            <a href="https://prodoctorov.ru/new/rate/lpu/35565/">
+                <img src="../../images/prodoctorov.png" style="max-height:50px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+            <a href="https://2gis.ru/yaroslavl/firm/70000001006935873">
+                <img src="../../images/2gis.png" style="max-height:50px; margin-top: 10px;">
+            </a>
+        </div>
+    </div>
+</section>
+<section class="container feedback-list" style="margin-top: 20px;">
+    <h1 class="text-center">Отзывы</h1>
+    <div class="row">
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Спасибо большое Александру Евгеньевичу позитив, профессионализм и доброжелательное отношение.
+                Также благодарим всю команду клиники.
+            </h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Наталья Клочко</p>
+                <p class="text-end secondP">30.09.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Хочу поблагодарить за великолепно выполненную работу, за профессионализм, доброжелательность и талант
+                 Крайнова Константина Константиновича и Крайнову Ольгу Алексеевну. 
+                 Врачи от бога и очень приятные люди. 
+                 Я не думала, что в моем возрасте и в том состоянии зубов с которым я обратилась в клинику возможен такой замечательный результат.
+                  Коронки и импланты как будто мои Собственные здоровые зубы. Это совсем другое качество жизни. 
+                  Спасибо большое Вам, замечательные доктора!!! Спасибо всему коллективу клиники! 
+                Счастлива, что попала в ваши руки! Вы в моем сердце.
+            </h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Карпова Елена Анатольевна</p>
+                <p class="text-end secondP">21.09.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Прекрасная клиника. Сплочёный, дружелюбный коллектив. Очень энергичный врач, принимающий решения и воплощающий их в жизнь
+                быстро и профессинально!
+            </h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Ирина Евгеньевна</p>
+                <p class="text-end secondP">09.09.2021</p>
+            </div>
+        </div>
+        <div class="feedback-buttons text-center" style="margin-top: 10px; margin-bottom: 10px;">
+            <button type="button" class="" data-bs-toggle="modal" data-bs-target="#give-feedback">
+                <span>Оставить отзыв</span>
+            </button>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Лечила зубы у Анны Андреевны. Очень понравилась приветливая и дружелюбная атмосфера в клинике, а также быстрая и 
+                профессиональная работа врача. Продолжу лечиться у Вас.
+            </h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Корнилова Лилия Олеговна</p>
+                <p class="text-end secondP">09.09.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Огромная благодарность Тиуртьевой А. А. за профессионализм и доброе отношение к пациенту. Остались максимально довольны обслуживанием
+                и будем посещать этого специалиста и дальше. Выпишите ей премию в размере 9 окладов :)
+            </h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Лисина Екатерина Андреевна</p>
+                <p class="text-end secondP">24.08.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Ольга Алексеевна Крайнова - замечательный Специалист. Все манипуляции объясняет и делает всё аккуратно и безболезененно.
+                Современный умный врач. Спасибо!
+            </h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Родион Юрьевич Исаев</p>
+                <p class="text-end secondP">04.08.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Благодарю коллектив стоматологии YesDent за внимательное и доброе отношение, 
+                а Константину Константиновичу большое спасибо за удобный протез. Теперь я могу есть любую еду.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Людмила Терентьевна Шипина</p>
+                <p class="text-end secondP">22.07.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Большое спасибо за Вашу работу, терпение, прекрасное отношение!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Анжелика Вячеславовна Воробьёва</p>
+                <p class="text-end secondP">15.07.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Спасибо Вам огромное! Обязательно приеду еще, удалить еще один зуб.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Светлана Владимировна Челнокова</p>
+                <p class="text-end secondP">03.07.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Моему мужу очень понравилось, как лечат зубы и какой внимательный персонал.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">жена Родионова Романа Викторовича</p>
+                <p class="text-end secondP">12.06.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Считаю, одна из лучших клиник города. Очень тёплая атмосфера, отличная работа всего коллектива, уважение к клиенту. Врач - супер!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Людмила Гавриловна Мануйлова</p>
+                <p class="text-end secondP">08.06.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Замечательная клиника и удивительный коллектив!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Ольга Николаевна Ведерникова</p>
+                <p class="text-end secondP">27.05.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Очень качественное лечение, приятное и вежливое общение персонала. Очень понравились работа и результат. Буду рекомандовать всем, спасибо!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Наталия Павловна Бахвалова</p>
+                <p class="text-end secondP">20.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>В клинике очень профессиональные отзывчивые врачи и медперсонал. Выслушают внимательно и обязательно помогут в любой ситуации.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Светлана Викторовна Тетенкова</p>
+                <p class="text-end secondP">29.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Спасибо огромное всему коллективу стоматологии. Обращаюсь только сюда, всегда помогут!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Елена Анатольевна Шелеменцева</p>
+                <p class="text-end secondP">29.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Пребываю в полном восторге от услуг стоматологической клиники "Yes"! Выражаю благодарность всему коллективу и особенно Неуймину Александру Евгеньевичу!!! Специалист с "золотыми руками", профессионал своего дела, и просто открытый, душевный человек! Спасибо! Желаю всем сотрудникам успехов в работе и благодарных пациентов!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Тряпичкина Ольга Львовна</p>
+                <p class="text-end secondP">20.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Благодаря Вашим администраторам я никогда не пропускаю профосмотры, а руками Ворониной А. П. моя улыбка остаётся идеальной. Ассистены всегда поднимут настроение (спасибо Анастасии).</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Царькова Любовь Владимировна</p>
+                <p class="text-end secondP">15.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Огромное спасибо всему коллективу клиники! Вы меня просто спасли! Никому не доверяла и очень боялась удалять зуб мудрости. На самом деле вы - команда. Александр Евгеньевич и Любовь Вениаминовна, спасибо Вам! Вы - профессионалы!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Ратихина Юлия Николаевна</p>
+                <p class="text-end secondP"> 15.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Очень понравилось! С самого входа видна забота о пациентах клиники. Разноцветные бахилы, аккуратно по цветам разложены салфетки. Прекрасный доктор Анна Павловна, благодарю!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Тишина Наталья Анатольевна</p>
+                <p class="text-end secondP">13.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Прекрасная работа всей команды стоматологов. Спасибо, что вы нам помогаете!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Ефремова Роза Галимовна</p>
+                <p class="text-end secondP">13.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Мы лечимся в клинике всей семьёй, несмотря на то, что мы из другого региона. Когда бываем в отпуске, всегда заезжаем на осмотр! В клинике всегда чисто и уютно, атмосфера приятная! Успехов вам и процветания!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Мария Геннадьевна Сорина</p>
+                <p class="text-end secondP">13.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Профессионально, очень довольна качеством. И плюс атмосфера команды, добра.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Марина Викторовна Иванова</p>
+                <p class="text-end secondP">13.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Никаких замечаний, атмосфера очень приятная и комфорная. Врачи хорошие, ничего не болит больше, лечат на ура! Спасибо за ваш общий труд! Буду всем рекомендовать.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Юлия Алексеевна Зуева</p>
+                <p class="text-end secondP">12.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Посещаю клинику два года. Довольна качеством обслуживания. Доброжелательный персонал.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Ирина Вадимовна Хомко</p>
+                <p class="text-end secondP">10.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Лечил в данной стоматологии 10 зубов, всё делают быстро и качественно.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Денис Михайлович Чижов</p>
+                <p class="text-end secondP">09.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Находилась на приёме в клинике YesDent, осталась очень довольна. Приём начался без опоздания. Приятные сотрудники и чуткие доктора!!!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Светлана Вячеславовна Киселева</p>
+                <p class="text-end secondP">08.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Все очень нравится, врачи самые лучшие, не больно, не страшно. Все очень качественно!!!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Диана Романовна Шутова</p>
+                <p class="text-end secondP">08.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Хорошая клиника с высоковалифицированными специалистами.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Александр Божаткин</p>
+                <p class="text-end secondP">08.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Все замечательно!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Наталья Павловна Бахвалова</p>
+                <p class="text-end secondP">08.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Александр Евгеньевич - замечательный доктор! Все операции прошли отлично! Оказывается, удалять зубы не так страшно. Всё чётко и очень внимательно.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Соколова Анна Евгеньевна</p>
+                <p class="text-end secondP">07.04.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Крайнов Константин Константинович - доктор от Бога, руки золотые! Спасибо, что избавили от мучений с моим проблемным зубом.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Ширяева Екатерина Александровна</p>
+                <p class="text-end secondP">02.04.2021</p>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Отличная команда, обслуживание очень профессиональное. Администратор выше всяких похвал!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Романова Любовь Ивановна</p>
+                <p class="text-end secondP">31.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Быстро, качественно, всегда стараются пойти навстречу и подобрать удобное время.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Лесенко Вера Васильевна</p>
+                <p class="text-end secondP">25.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Ходим всей семьей к Анне Андреевне уже много лет. Довольны полностью всем. Это врач с золотыми руками, профессионал. Весь коллектив очень отзывчивый, приветливый. Огромное спасибо за ваши старания и знания, за профессионализм и мастерство!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Маринина Елена Владимировна</p>
+                <p class="text-end secondP">24.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Спасибо всем работникам стоматологии за понимание, доброту и волшебные руки. В первую очередь - администратору Светлане и врачу Неуймину А. Е.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Дьячкова Ольга Витальевна</p>
+                <p class="text-end secondP">23.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Всё очень устраивает. Персонал вежливый и обходительный. Профессионалы!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Бахвалова Наталия Павловна</p>
+                <p class="text-end secondP">23.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Приятно, что даже на день рождения сделали подарок.</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Иванова Елена Борисовна</p>
+                <p class="text-end secondP">23.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Большое спасибо хирургу-имплантологу Неуймину А. Е. за прекрасную работу! ВСё очень понравилось, будем ходить к вам всей семьёй. Большое спасибо администратору Елене за её вежливое отношение и чуткость, побольше бы таких людей!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Скрипниченко Марина Владимировна</p>
+                <p class="text-end secondP">17.03.2021</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Случайно попала к вам в клинику на приём и была приятно удивлена профессионализмом врача-терапевта Ворониной Анны Павловны, а также ассистента врача Фроловой Елены Валерьевны. Мне всё понравилось, я осталась довольна работой!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Овезова Ольга Нурмуратовна</p>
+                <p class="text-end secondP">01.03.2021</p>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-4 feedback d-flex flex-column">
+            <h2>Большое спасибо хирургу-имплантологу Неуймину А. Е. за его отличную работу и золотые руки - врач от бога! Благодарю администратора Елену. Очень внимательная, отзывчивая, чуткая. Спасибо всем!</h2>
+            <div class="mt-auto">
+                <p class="text-end firstP">Буланова Людмила Владимировна</p>
+                <p class="text-end secondP">15.02.2021</p>
+            </div>
+        </div>
+        
+
+    </div>
+</section>
+
+<footer class="footer container-fluid">
+    <div class="footer-content row">
+        <div class="offset-lg-1 col-md-3 col-lg-2 text-center">
+            <p>8 (4852) 56-90-90</p>
+            <p>Режим работы </br>
+            Пн-Пт: 9:00 - 20:00</br>
+            Сб: 10:00 - 16:00
+            </p>
+            <p>ул. Елены Колесовой, 58</p>
+            <p><a href="../docs/rules.docx" style="text-decoration: underline !important">Правила клиники</a></p>
+        </div>
+        <div class="col-md-3 col-lg-2 text-center">
+            <p><a href="../../index.html">Главная</a></p>
+            <p><a href="services.html">Услуги</a></p>
+            <p><a href="doctors.html">Врачи</a></p>
+            <p><a href="contacts.html">Контакты</a></p>
+            <p><a href="feedback.html">Отзывы</a></p>
+            <p><a href="works.html">Работы</a></p>
+            <p><a href="cases.html">Кейсы</a></p>
+        </div>
+        <div class="col-lg-2 text-center d-none d-lg-block" style="margin-top: -10px">
+            <a><img src="../../images/logoFooter.png" height="150"></a>
+            <a class="name-footer" href="../../index.html">YesDent</a>
+        </div>
+        <div class="col-md-3 col-lg-2 text-center">
+            <p><a href="../services/treatment.html">Лечение зубов</a></p>
+            <p><a href="../services/orthopedics.html">Ортопедия</a></p>
+            <p><a href="../services/gum.html">Лечение десён</a></p>
+            <p><a href="../services/surgery.html">Хирургия</a></p>
+            <p><a href="../services/implantation.html">Имплантация</a></p>
+            <p><a href="../services/hygiene.html">Гигиена</a></p>
+            <p><a href="../services/whitening.html">Отбеливание</a></p>
+        </div>
+        <div class="col-md-3 col-lg-2 text-center">
+            <p><a href="https://vk.com/yesdent">
+                <img src="../../images/vk.png" height="20" style="margin-top: -2px;">
+                <a href="https://vk.com/yesdent">ВКонтакте</a>
+            </a></p>
+            <p><a href="https://instagram.com/yesdent.ru">
+                <img src="../../images/inst.png" height="20">
+                <a href="https://instagram.com/yesdent.ru">Instagram</a>
+            </a></p>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../../js/responsivevoice.min.js"></script>
+<script src="../../js/js.cookie.js"></script>
+<script src="../../js/bvi-init.js"></script>
+<script src="../../js/bvi.min.js"></script>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function senddata() {
+    var button = document.getElementById("callback-send");
+    var head = document.getElementById("head-appointment");
+    var name = document.getElementById("name");
+    var surname = document.getElementById("surname");
+    var dadname = document.getElementById("dadname");
+    var phone = document.getElementById("phone");
+    if (phone.value!="" && name.value!="") {
+        head.innerHTML = "Заявка отправляется...";
+        name.classList.add('d-none');
+        surname.classList.add('d-none');
+        dadname.classList.add('d-none');
+        phone.classList.add('d-none');
+        button.classList.add("d-none");
+        $.ajax({
+            method: "POST",
+            url: "send.php",
+            data: {
+                'name' : name.value,
+                'surname' : surname.value,
+                'dadname' : dadname.value,
+                'phone' : phone.value,
+            }
+        }).done(function() {
+            head.innerHTML = "Заявка отправлена!";
+            name.value = "";
+            surname.value = "";
+            dadname.value = "";
+            phone.value = "";
+            setTimeout(() => {
+                head.innerHTML = "Заполните эту форму, и мы перезвоним Вам";
+                name.classList.remove('d-none');
+                surname.classList.remove('d-none');
+                dadname.classList.remove('d-none');
+                phone.classList.remove('d-none');
+                button.classList.remove('d-none');
+                }, 2000);
+            });
+            name.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+            phone.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+        }
+    else {
+        name.style.border = "1px red solid";
+        phone.style.border = "1px red solid";
+        }
+    return false;
+    }
+</script>

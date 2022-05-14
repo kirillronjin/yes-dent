@@ -1,0 +1,863 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'Montserrat', sans-serif;
+}
+span.bg-light {
+    background: #ffa500 !important;
+}
+a.a-sales {
+    color: white;
+    text-decoration: underline;
+    font-size: 24px;
+}
+.navbar {
+    background: linear-gradient(0deg, rgba(242, 245, 255), rgba(242, 245, 255));
+}
+.link-nav {
+    color: rgba(89, 122, 255, 0.7) !important;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    text-align: center;
+    margin: 0px 25px ;
+}
+.link-nav:hover {
+    color: #FFC793 !important;
+}
+.navbar-light .navbar-toggler {
+    border-color: rgba(89, 122, 255, 0.4) ;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.active {
+    font-weight: 600;
+}
+.logo {
+    color: rgba(89, 122, 255, 0.5) !important;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 59px;
+}
+.logo-sm {
+    color: rgba(89, 122, 255, 0.5) !important;
+    font-weight: bold;
+    font-size: 31px;
+    line-height: 59px;
+}
+.car {
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-left: 10%;
+    text-align: left;
+    width: 100%;
+}
+#car-1 {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 49.48%, #FFFFFF 100%), url(../images/sliderImg/1.jpg) no-repeat center top;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    overflow: hidden;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#car-2 {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 49.48%, #FFFFFF 100%), url(../images/sliderImg/2.jpg) no-repeat center top;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    overflow: hidden;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#car-3 {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 49.48%, #FFFFFF 100%), url(../images/sliderImg/3.jpg) no-repeat center top;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    overflow: hidden;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#car-4 {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 49.48%, #FFFFFF 100%), url(../images/sliderImg/4.jpg) no-repeat center top;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    overflow: hidden;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#car-5 {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 49.48%, #FFFFFF 100%), url(../images/sliderImg/5.jpg) no-repeat center top;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    overflow: hidden;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.car span {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #FFFFFF;
+}
+
+.car span.car-text-sm {
+    font-size: 28px;
+    line-height: 34px;
+}
+
+span.bg-dark {
+    background: #ffa500 !important;
+}
+.sale {
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.car-text {
+    
+}
+.tilt {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.tilt:hover {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    color: rgba(89, 122, 255, 0.5);
+}
+
+.sales-ul {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 44px;
+    color: rgba(89, 122, 255, 0.5);
+}
+
+.values h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 44px;
+    color: rgba(89, 122, 255, 0.5);
+}
+
+p.last-li {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 44px;
+    color: rgba(89, 122, 255, 0.5);
+    margin-top: -40px !important;
+    padding-top: 0px;
+}
+
+.services h2 a, .services-list h2 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: red;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.carousel-indicators li{
+	background-color: rgba(89, 122, 255, 0.5) !important;
+	width: 40px !important;
+	height: 8px !important;
+	border-radius: 15px !important;
+	margin: 0 10px !important;
+}
+.carousel-indicators .active{
+    background-color: #E6EBFF !important;
+}
+
+.values h2 span{
+    font-family: Montserrat;
+    font-style: normal;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 26px;
+    opacity: 0.6;
+    margin-bottom: 0px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.values-text {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    opacity: 0.6;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.values-item {
+    margin-bottom: 10px;
+}
+
+.one {
+    background: linear-gradient(180deg, rgba(242, 245, 255, 0) 0%, rgba(242, 245, 255, 0.7) 43.23%, rgba(242, 245, 255, 0) 100%);
+}
+.appointment h1 {
+    margin-bottom: 10px;
+}
+.appointment h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+#callback-send {
+    background: rgba(89, 122, 255, 0.8);
+    border: none;
+    opacity: 0.8;
+    border-radius: 10px;
+    height:40px;
+    width: 90%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+#feedback-send, #feedback-sendF {
+    background: rgba(89, 122, 255, 0.8);
+    border: none;
+    opacity: 0.8;
+    border-radius: 10px;
+    width: 200px;
+    height:40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+#callback-send:focus {
+    
+}
+.callback {
+    margin-bottom: 10px;
+}
+.callback input, .give-feedback input {
+    background: #FFFFFF;
+    border: 1px solid rgba(89, 122, 255, 0.7);
+    box-sizing: border-box;
+    border-radius: 15px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.feedback-text textarea {
+    background: #FFFFFF;
+    border: 1px solid rgba(89, 122, 255, 0.7);
+    box-sizing: border-box;
+    border-radius: 15px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+} 
+button:focus {
+outline: none ;
+}
+
+::-webkit-input-placeholder {
+    text-align:center;
+}
+
+.wa-phone {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top:20px;
+}
+.footer a, .footer p {
+    margin-bottom: 5px; 
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #597AFF;
+    text-decoration: none;
+}
+.footer {
+    background-color: rgba(242, 245, 255, 0.7);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+a.name-footer {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #597AFF;
+}
+.footer a:hover {
+    color: #FFC793 !important;
+}
+.header-content {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #597AFF;
+}
+.header-name {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+
+    color: rgba(89, 122, 255, 0.5);
+}
+.second-text-header {
+    margin-top: 20px;
+}
+
+.doctors .card-title, .works .card-title{ 
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #000000;
+}
+.cases .card-title{ 
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #000000;
+}
+.doctors .card-text, .works .card-text{
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 5px;
+}
+.card-text a{
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 5px;
+}
+a{
+    text-decoration: none;
+}
+.card {
+    border: none;
+}
+section {
+    margin-bottom: 20px;
+}
+.services-list h2 {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.services-list h3 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(89, 122, 255, 0.7);
+    margin-bottom: 0px;
+}
+
+.services-list h4 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.doctor-card h5 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    margin-top: -10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.doctor-card p {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    opacity: 0.8;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -10px;
+}
+.doctor-description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.feedback {
+    background: url(../images/feedback.png) no-repeat;
+    background-position: center top;
+    background-size: 50%;
+    min-height: 250px;
+}
+
+.cases h5 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.feedback h2 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 31px;
+    color: #000000; 
+}
+.case h2 {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+    
+}
+
+.feedback p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feedback .firstP {
+    margin-bottom: 0;
+}
+
+.feedback-buttons button,  {
+    width: 170px;
+    height: 33px;
+    background: #E6EBFF;
+    opacity: 0.7;
+    border: 1px solid #597AFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 5px 10px;
+}
+
+.feedback-buttons button span {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.treatment-image {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 40.48%, #FFFFFF 100%), url(../images/servicesImg/treatment.jpg) no-repeat center top;
+    background-position: center center;
+    width: 100%;
+    overflow: hidden;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.service-list .main-text {
+    color: #000000;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.service-price h1 {
+    color: #000000;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    opacity: 0.5;
+    margin-bottom: -10px;
+}
+
+.table-service-inner {
+    color: #000000;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0.6;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.table-service-item-price {
+    margin-left: 0;
+}
+
+.odd {
+    background: #F2F5FF;
+}
+
+.service-price h2 {
+    color: #000000;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 25px;
+}
+
+.doctor-page-card .name span {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 7px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.doctor-page-card .description span{
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.doctor-page-card .appointment div{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.education h3, .career h3, .doctors-feedback-list h1, .certificates h3, .works h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #597AFF;
+}
+.education-item, .career-item, .description-contacts, .vestibuloplasty_list, .cases-description{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    opacity: 0.8;
+    margin-top: 13px;
+}
+.vestibuloplasty_description {
+    color: #000000;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    opacity: 0.6;
+    margin-top: 10px;
+}
+
+.doctors-feedback-list-content {
+    background: url(../images/feedback1.png) no-repeat;
+    background-position: center top;
+    background-size: 30%;
+}
+
+.doctors-feedback {
+    padding: 0 30px;
+    margin-bottom: 15px;
+}
+.doctors-feedback h2 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.doctors-feedback p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.doctors-feedback .firstP {
+    margin-bottom: 0;
+}
+
+.doctors-feedback-buttons button {
+    width: 170px;
+    height: 33px;
+    background: #E6EBFF;
+    opacity: 0.7;
+    border: 1px solid #597AFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 5px 10px;
+}
+.doctors-feedback-buttons button span {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    background: linear-gradient(180deg, #597AFF 0%, #000000 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content {
+    background: rgba(242, 245, 255, 1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-sizing: border-box !important;
+    border-radius: 10px !important;
+}
+.give-feedback {
+    margin-top: 10px;
+    position:relative;
+    z-index:9999;
+}
+
+.give-feedback-content h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    margin-top:0;
+}
+
+.appointment-button {
+    background: #FFFFFF;
+    border: none;
+}
+
+.border-red {
+    color: red;
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 8px !important;
+    margin-top: 0px !important;
+    padding: 0 !important;
+}
+
+.main-text p{
+    margin-bottom: 8px !important;
+}
+
+.transport h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    opacity: 0.7;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.transport h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    opacity: 0.7;
+}
+
+.routes {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 22px;
+    color: #00000F;
+    margin-top: 5px;
+}
+.work-description {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 5px;
+}
+
+
+.block_1{
+    
+    overflow:hidden;
+    position:relative;
+    
+    background-size:cover
+}
+.work_photo_1 {
+    overflow:hidden;
+    position:relative;
+    background-size:cover
+}
+.block_2{
+    position:absolute; 
+    visibility:hidden;
+    background:rgba(0, 0, 0, 0.7);
+    font-size:14px;
+    color: white;
+    top:40px;
+    padding: 3px;
+    font-style: italic;
+}
+.block_2 p {
+    text-align: center;
+}
+.block_1:hover .block_2{
+    visibility:visible;
+    transition:1s;
+    -webkit-transition:1s;
+    transform:translatey(-40px);
+    -webkit-transform:translatey(-40px);
+}
+.block_1:hover{
+    filter:opacity(50%);
+    -webkit-filter:opacity(60%);
+    transition:0.6s;
+    -webkit-transition:0.6s;
+}
+.vestibuloplasty_list {
+
+}
+.button_none {
+    border: none;
+    background: none;
+    text-decoration: underline;
+}

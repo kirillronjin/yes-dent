@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="../../css/bvi.min.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bvi-font.min.css" type="text/css">
+    <link rel="icon" href="../../images/logoInHeader.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Неуймин А. Е.</title>
+    <meta name="description" content="Неуймин Александр Евгеньевич - врач-стоматолог-хирург, имплантолог. Опыт работы 6 лет"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../src/styles.css">
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="../../maskinput.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    jQuery(function($){
+    $("#phone").mask("+9 (999) 999-99-99");
+    });
+</script>
+
+<div class="modal fade" id="give-feedback" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="padding-right: 0px !important;">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" style="">
+        <div class="modal-content">
+            <div class="text-end" style="padding-top: 5px; padding-right: 5px;">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding-top: 0 !important;">
+                <div class="give-feedback" id="">
+                    <div class="give-feedback-content">
+                        <h2 class="text-center" id="head-feedback">Оставьте отзыв о нашей работе</h2>
+                        <div class="fio row text-center">
+                            <div class="col-md-4">
+                                <input type="text" name="fsurname" id="fsurname" placeholder="Фамилия">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="fname" id="fname" placeholder="Имя">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="fdadname" id="fdadname" placeholder="Отчество">
+                            </div>
+                        </div>
+                        <div class="feedback-text">
+                            <textarea placeholder="Отзыв" id="feedback"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button id="feedback-send" onclick="sendFeedback()">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header container d-none d-lg-block">
+    <div class="header-content row">
+        <div class="col-4 text-center second-text-header">
+            Стоматология в Ярославле
+        </div>
+        <div class="col-4 header-name text-center">
+            <a href="../../index.html"><img src="../../images/logoHeader.png" height="50" style="margin-top: -10px;"></a>
+            YesDent
+        </div>
+        <div class="col-4 text-center second-text-header">
+            ул. Елены Колесовой, 56
+        </div>
+    </div>
+</div>
+
+<div class="navigation sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid container">
+            <div class="logo navbar-brand d-lg-none">
+                <a href="../../index.html"><img src="../../images/logoInHeader.png" style="margin-top: -10px;" height="60"/></a>
+                <span class="logo navbar-brand d-none d-sm-inline" href="#">YesDent</span>
+                <span class="logo-sm navbar-brand d-sm-none" href="#">YesDent</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="link-nav nav-link" href="../../index.html">Главная</a>
+                    <a class="link-nav nav-link" href="../mainpages/services.html">Услуги</a>
+                    <a class="link-nav nav-link" href="../mainpages/doctors.html">Врачи</a>
+                    <a class="link-nav nav-link" href="../mainpages/feedback.html">Отзывы</a>
+                    <a class="link-nav nav-link" href="../mainpages/contacts.html">Контакты</a>
+                    <a class="link-nav nav-link" href="../mainpages/works.html">Работы</a>
+                    <!--<a class="link-nav nav-link active" aria-current="page" href="#">Кейсы</a>-->
+                    <a class="link-nav nav-link" href="tel:74852569090">
+                        <img src="../../images/phone.png" style="margin-top: -2px;"  height="20px"/>
+                        8 (4852) 56-90-90
+                    </a>
+                    <a class="link-nav nav-link" href="tel:79056337486">
+                        <img src="../../images/phone.png" style="margin-top: -2px;"  height="20px"/>
+                        8 (905) 633-74-86
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container text-center" style="margin-top: 10px;">
+    <button class="visually-impaired" style="background: white !important;">
+    <a href="#" class="bvi-open" title="Версия сайта для слабовидящих" style="color: black !important;"><i class="bvi-icon bvi-eye bvi-2x"></i> Версия сайта для слабовидящих</a>
+    </button>
+</div>
+
+
+<div class="modal fade" id="get-appointment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="padding-right: 0px !important;">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" style="">
+        <div class="modal-content">
+            <div class="text-end" style="padding-top: 5px; padding-right: 5px;">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding-top: 0 !important;">
+                <div class="appointment container">
+                    <h1 class="text-center"> Запишитесь на приём </h1>
+                    <div class="app-content row">
+                        <div class="callback col-12 col-sm-7">
+                            <h2 class="text-center" id="head-appointment">Заполните эту форму, и мы перезвоним Вам</h2>
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <p class="d-none" id="processing-p">Заявка отправляется</p>
+                                        <input type="text" name="surname" id="surname" placeholder="Фамилия">
+                                        <input type="text" name="name" id="name" placeholder="Имя" required>
+                                        <input type="text" name="dadname" id="dadname" placeholder="Отчество">
+                                        <input type="text" name="phone" id="phone" placeholder="Телефон" required>
+                                    </div>
+
+                                    <div class="col-md-6 text-center">
+                                        <button id="callback-send" onclick="senddata()">Отправить</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="whatsapp col-12 col-sm-5 text-center">
+                            <h2 class="text-center">Или свяжитесь с нами в WhatsApp</h2>
+                            <a href="https://wa.me/79056337486"><img src="../../images/whatsappcallback.png" height="50" style="opacity: 0.6; margin-top:0px;"></a>
+                            <div class="wa-phone text-center" >+7 (905) 633-74-86</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<section class="container doctor-page-card" style="margin-top: 30px;">
+    <div class="d-block d-md-none">
+        <div class="text-center" style="margin-bottom: 10px;">
+             <div class="name" style="margin-bottom: 10px;">
+                <span>
+                    Неуймин</br>
+                </span>
+                <span>
+                    Александр</br>
+                </span>
+                <span>
+                    Евгеньевич</br>
+                </span>
+            </div>
+            <img src="../doctors/neuimin/image-2.jpg" style="height: 230px; border-radius: 5px;">
+        </div>
+        <div class="text-center">
+            <div class="description" style="margin-bottom: 10px;">
+                <span>Врач-стоматолог-хирург, имплантолог</span>
+            </div>
+            <div class="description" style="margin-bottom: 10px;">
+                <span>Опыт работы 6 лет</span>
+            </div>
+        </div>
+        <div class="appointment text-center">
+            <div> 
+                <p style="margin-bottom: 5px">Запишитесь на прием</p>
+                <button type="button" class="appointment-button" data-bs-toggle="modal" data-bs-target="#get-appointment">
+                    <img src="../../images/appointment.png" height="30px;" >
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-md-block">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="name">
+                    <span>
+                    Неуймин</br>
+                    </span>
+                    <span>
+                        Александр</br>
+                    </span>
+                    <span>
+                        Евгеньевич</br>
+                    </span>
+                </div>
+                </br>
+                <div class="description">
+                    <span>Врач-стоматолог-хирург, имплантолог</span>
+                    </br>
+                    </br>
+                </div>
+                <div class="description">
+                    <span>Опыт работы 6 лет</span>
+                </div>
+            </div>
+            <div class="col-md-4 appointment text-center">
+                <div> 
+                    <p style="margin-bottom: 5px">Запишитесь на прием</p>
+                    <button type="button" class="appointment-button" data-bs-toggle="modal" data-bs-target="#get-appointment">
+                        <img src="../../images/appointment.png" height="30px;" >
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="../doctors/neuimin/image-2.jpg" style="height: 230px; border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container education">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+            <h3>Образование:</h3>
+            <div class="education-item">Ярославский государственный медицинский университет. Врач-стоматолог по специальности «Стоматология». Год окончания - 2014.</div>
+            <div class="education-item">ФГБОУ ВО Нижегородская государственная медицинская академия Минздрава России. Стоматология ортопедическая. Год окончания - 2016.</div>
+            <div class="education-item">ФГБОУ ВО Нижегородская государственная медицинская академия Минздрава России. Стоматология хирургическая. Год окончания - 2016. </div>
+        </div>
+    </div>
+</section>
+
+<section class="container career">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+            <h3>Специализация:</h3>
+            <div class="career-item">- классическая и комбинированная имплантация;</div>
+            <div class="career-item">- синус-лифтинг;</div>
+            <div class="career-item">- направленная регенерация костной ткани;</div>
+            <div class="career-item">- остеопластика;</div>
+            <div class="career-item">- простое и сложное удаление зубов;</div>
+            <div class="career-item">- оперативное и консервативное лечение тканей пародонта;</div>
+            <div class="career-item">- зубосохраняющие операции;</div>
+            <div class="career-item">- все виды зубного протезирования и ортопедического лечения.</div>
+        </div>
+    </div>
+</section>
+
+<section class="container doctors-feedback-list" style="margin-top: 20px;">
+    <div class="doctors-feedback-list-content">
+    <h1 class="text-center">Отзывы пациентов</h1>
+        <div class="row">
+            <div class="col-sm-6 doctors-feedback d-flex flex-column">
+                <h2>Пребываю в полном восторге от услуг стоматологической клиники "Yes"! Выражаю благодарность всему коллективу и особенно Неуймину Александру Евгеньевичу!!! Специалист с "золотыми руками", профессионал своего дела, и просто открытый, душевный человек! Спасибо! Желаю всем сотрудникам успехов в работе и благодарных пациентов!</h2>
+                <div class="mt-auto">
+                    <p class="text-end firstP">Тряпичкина Ольга Львовна</p>
+                    <p class="text-end secondP">20.04.2021</p>
+                </div>
+            </div>
+            <div class="col-sm-6 doctors-feedback d-flex flex-column">
+                <h2>Огромное спасибо всему коллективу клиники! Вы меня просто спасли! Никому не доверяла и очень боялась удалять зуб мудрости. На самом деле вы - команда. Александр Евгеньевич и Любовь Вениаминовна, спасибо Вам! Вы - профессионалы!</h2>
+                <div class="mt-auto">
+                    <p class="text-end firstP">Ратихина Юлия Николаевна</p>
+                    <p class="text-end secondP"> 15.04.2021</p>
+                </div>
+            </div>
+            <div class="col-sm-6 doctors-feedback d-flex flex-column">
+                <h2>Спасибо всем работникам стоматологии за понимание, доброту и волшебные руки. В первую очередь - администратору Светлане и врачу Неуймину А. Е.</h2>
+                <div class="mt-auto">
+                    <p class="text-end firstP">Дьячкова Ольга Витальевна</p>
+                    <p class="text-end secondP">23.03.2021</p>
+                </div>
+            </div>
+            <div class="col-sm-6 doctors-feedback d-flex flex-column">
+                <h2>Большое спасибо хирургу-имплантологу Неуймину А. Е. за прекрасную работу! ВСё очень понравилось, будем ходить к вам всей семьёй. Большое спасибо администратору Елене за её вежливое отношение и чуткость, побольше бы таких людей!</h2>
+                <div class="mt-auto">
+                    <p class="text-end firstP">Скрипниченко Марина Владимировна</p>
+                    <p class="text-end secondP">17.03.2021</p>
+                </div>
+            </div>
+            <div class="col-sm-6 doctors-feedback d-flex flex-column">
+                <h2>Большое спасибо хирургу-имплантологу Неуймину А. Е. за его отличную работу и золотые руки - врач от бога! Благодарю администратора Елену. Очень внимательная, отзывчивая, чуткая. Спасибо всем!</h2>
+                <div class="mt-auto">
+                    <p class="text-end firstP">Буланова Людмила Владимировна</p>
+                    <p class="text-end secondP">15.02.2021</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="feedback-buttons text-center">
+        <button class="d-none"><span><a href="../mainpages/feedback.html">Еще отзывы</a></span></button>
+        <button type="button" class="" data-bs-toggle="modal" data-bs-target="#give-feedback">
+            <span>Оставить отзыв</span>
+        </button>
+    </div>
+</section>
+
+<section class="works container">
+    <h3 class="offset-1">Работы:</h3>
+    <div id="carousel-works" class="carousel carousel-dark slide" data-bs-ride="0" data-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/works/1.jpg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/works/1.jpg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item " data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/works/2.jpg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/works/2.jpg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item " data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/works/3.jpg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/works/3.jpg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item " data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/works/4.jpg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/works/4.jpg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item " data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/works/5.jpg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/works/5.jpg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item " data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/works/6.jpg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/works/6.jpg" height=200>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <a class="carousel-control-prev" href="#carousel-works" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-works" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+</section>
+
+<section class="certificates container">
+    <h3 class="offset-1">Сертификаты:</h3>
+    <div id="carousel-certificates" class="carousel carousel-dark slide" data-bs-ride="0" data-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/1.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/1.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/2.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/2.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/3.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/3.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/4.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/4.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/5.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/5.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/6.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/6.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/7.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/7.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/8.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/8.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/9.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/9.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="false">
+                <div class=" col-10 offset-1 row">
+                    <div class="col-12 text-center mt-2 d-none d-md-block">
+                        <img src="neuimin/sertificates/10.jpeg" height=300>
+                    </div>
+                    <div class="col-12 text-center mt-2 d-block d-md-none">
+                        <img src="neuimin/sertificates/10.jpeg" height=200>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            <a class="carousel-control-prev" href="#carousel-certificates" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-certificates" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+</section>
+
+<footer class="footer container-fluid">
+    <div class="footer-content row">
+        <div class="offset-lg-1 col-md-3 col-lg-2 text-center">
+            <p>8 (4852) 56-90-90</p>
+            <p>Режим работы </br>
+            Пн-Пт: 9:00 - 20:00</br>
+            Сб: 10:00 - 16:00
+            </p>
+            <p>ул. Елены Колесовой, 58</p>
+            <p><a href="../docs/rules.docx" style="text-decoration: underline !important">Правила клиники</a></p>
+        </div>
+        <div class="col-md-3 col-lg-2 text-center">
+            <p><a href="../../index.html">Главная</a></p>
+            <p><a href="../mainpages/services.html">Услуги</a></p>
+            <p><a href="../mainpages/doctors.html">Врачи</a></p>
+            <p><a href="../mainpages/contacts.html">Контакты</a></p>
+            <p><a href="../mainpages/feedback.html">Отзывы</a></p>
+            <p><a href="../mainpages/works.html">Работы</a></p>
+            <p><a href="../mainpages/cases.html">Кейсы</a></p>
+        </div>
+        <div class="col-lg-2 text-center d-none d-lg-block" style="margin-top: -10px">
+            <a><img src="../../images/logoFooter.png" height="150"></a>
+            <a class="name-footer" href="../../index.html">YesDent</a>
+        </div>
+        <div class="col-md-3 col-lg-2 text-center">
+            <p><a href="../services/treatment.html">Лечение зубов</a></p>
+            <p><a href="../services/orthopedics.html">Ортопедия</a></p>
+            <p><a href="../services/gum.html">Лечение десён</a></p>
+            <p><a href="../services/surgery.html">Хирургия</a></p>
+            <p><a href="../services/implantation.html">Имплантация</a></p>
+            <p><a href="../services/hygiene.html">Гигиена</a></p>
+            <p><a href="../services/whitening.html">Отбеливание</a></p>
+        </div>
+        <div class="col-md-3 col-lg-2 text-center">
+            <p><a href="https://vk.com/yesdent">
+                <img src="../../images/vk.png" height="20" style="margin-top: -2px;">
+                <a href="https://vk.com/yesdent">ВКонтакте</a>
+            </a></p>
+            <p><a href="https://instagram.com/yesdent.ru">
+                <img src="../../images/inst.png" height="20">
+                <a href="https://instagram.com/yesdent.ru">Instagram</a>
+            </a></p>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../../js/responsivevoice.min.js"></script>
+<script src="../../js/js.cookie.js"></script>
+<script src="../../js/bvi-init.js"></script>
+<script src="../../js/bvi.min.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    function sendFeedback() {
+    var button = document.getElementById("feedback-send");
+    var head = document.getElementById("head-feedback");
+    var fname = document.getElementById("fname");
+    var fsurname = document.getElementById("fsurname");
+    var fdadname = document.getElementById("fdadname");
+    var feedback = document.getElementById("feedback");
+    if (feedback.value!="" && name.value!="") {
+        head.innerHTML = "Отзыв отправляется...";
+        fname.classList.add('d-none');
+        fsurname.classList.add('d-none');
+        fdadname.classList.add('d-none');
+        feedback.classList.add('d-none');
+        button.classList.add("d-none");
+        $.ajax({
+            method: "POST",
+            url: "feedback.php",
+            data: {
+                'fname' : fname.value,
+                'fsurname' : fsurname.value,
+                'fdadname' : fdadname.value,
+                'feedback' : feedback.value,
+            }
+        }).done(function() {
+            head.innerHTML = "Спасибо за Ваш отзыв!";
+            fname.value = "";
+            fsurname.value = "";
+            fdadname.value = "";
+            feedback.value = "";
+            setTimeout(() => {
+                head.innerHTML = "Оставьте отзыв о нашей работе";
+                fname.classList.remove('d-none');
+                fsurname.classList.remove('d-none');
+                fdadname.classList.remove('d-none');
+                feedback.classList.remove('d-none');
+                button.classList.remove('d-none');
+                }, 2000);
+            });
+            fname.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+            feedback.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+        }
+    else {
+        fname.style.border = "1px red solid";
+        feedback.style.border = "1px red solid";
+        }
+    return false;
+    }
+
+    function senddata() {
+    var button = document.getElementById("callback-send");
+    var head = document.getElementById("head-appointment");
+    var name = document.getElementById("name");
+    var surname = document.getElementById("surname");
+    var dadname = document.getElementById("dadname");
+    var phone = document.getElementById("phone");
+    if (phone.value!="" && name.value!="") {
+        head.innerHTML = "Заявка отправляется...";
+        name.classList.add('d-none');
+        surname.classList.add('d-none');
+        dadname.classList.add('d-none');
+        phone.classList.add('d-none');
+        button.classList.add("d-none");
+        $.ajax({
+            method: "POST",
+            url: "send.php",
+            data: {
+                'name' : name.value,
+                'surname' : surname.value,
+                'dadname' : dadname.value,
+                'phone' : phone.value,
+            }
+        }).done(function() {
+            head.innerHTML = "Заявка отправлена!";
+            name.value = "";
+            surname.value = "";
+            dadname.value = "";
+            phone.value = "";
+            setTimeout(() => {
+                head.innerHTML = "Заполните эту форму, и мы перезвоним Вам";
+                name.classList.remove('d-none');
+                surname.classList.remove('d-none');
+                dadname.classList.remove('d-none');
+                phone.classList.remove('d-none');
+                button.classList.remove('d-none');
+                }, 2000);
+            });
+            name.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+            phone.style.border = "1px solid rgba(89, 122, 255, 0.7)";
+        }
+    else {
+        name.style.border = "1px red solid";
+        phone.style.border = "1px red solid";
+        }
+    return false;
+    }
+
+
+</script>
